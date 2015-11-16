@@ -3,8 +3,14 @@
   "version": "1.0.0",
   "description": "Create News Preview compatible folders from an Apple News compatible JSON endpoint",
   "main": "index.js",
+  "bin": {
+    "anpg": "./bin/app.js"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch-cli": "./node_modules/babel/bin/babel.js --watch ./src -d ./lib",
+    "build-cli": "./node_modules/babel/bin/babel.js ./src -d ./lib",
+    "start": "npm run build-cli && npm link"
   },
   "repository": {
     "type": "git",
@@ -22,5 +28,12 @@
   "bugs": {
     "url": "https://github.com/shortlist-digital/apple-news-preview-generator/issues"
   },
-  "homepage": "https://github.com/shortlist-digital/apple-news-preview-generator#readme"
+  "homepage": "https://github.com/shortlist-digital/apple-news-preview-generator#readme",
+  "dependencies": {
+    "babel": "^5.8.34",
+    "commander": "^2.9.0",
+    "es6-promise": "^3.0.2",
+    "isomorphic-fetch": "^2.2.0",
+    "tree-walk": "^0.3.0"
+  }
 }

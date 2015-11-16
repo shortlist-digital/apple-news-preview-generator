@@ -1,4 +1,7 @@
-reated by https://www.gitignore.io/api/linux,osx,sublimetext,vim,node,wordpress
+### App ###
+lib
+
+created by https://www.gitignore.io/api/linux,osx,sublimetext,vim,node,wordpress
 
 ### Linux ###
 *~
