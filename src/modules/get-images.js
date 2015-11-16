@@ -1,7 +1,7 @@
 import path from 'path'
 import fs from 'fs-extra'
 import traverse from 'traverse'
-import wget from 'wget'
+import wget from 'wget-improved'
 
 let getImage = (directoryLocation, filename, url) => {
   let download = wget.download(url, `${directoryLocation}/${filename}`)
