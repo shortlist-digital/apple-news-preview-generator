@@ -1,5 +1,6 @@
 ### App ###
 lib
+tmp
 
 created by https://www.gitignore.io/api/linux,osx,sublimetext,vim,node,wordpress
 

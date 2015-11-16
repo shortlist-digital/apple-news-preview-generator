@@ -1,16 +1,29 @@
 import fs from 'fs-extra'
 import fetch from 'isomorphic-fetch'
 import slug from 'slug'
+import getImages from './get-images'
+import osenv from 'osenv'
+import mergeCommonBundleFiles from './merge-common-bundle-files'
 
-let initialDir = process.cwd()
+let homeDirectory = osenv.home()
+let configString = fs.readFileSync(homeDirectory + '/.anpgrc')
+let config = JSON.parse(configString)
+
+let initialDir = config.outputDir
 
 let writeArticle = (articleObject) => {
   let folderName = slug(articleObject.title.toLowerCase())
-  console.log('New project will be written to: ', initialDir + folderName)
+  let directoryLocation = `${initialDir}/${folderName}/`
+  fs.outputJSON(directoryLocation + 'article.json', articleObject, () => {
+    console.log('Written to directory')
+    getImages(directoryLocation, articleObject)
+    mergeCommonBundleFiles(directoryLocation, config.bundleDir)
+  })
 }
 
 let filterResponse = (response) => {
   console.log('Filtering response...')
+  console.log(response.status)
   if (response.status >= 400) {
     throw new Error ('Bad response from the server')
   }
