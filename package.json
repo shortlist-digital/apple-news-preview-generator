@@ -1,13 +1,14 @@
 {
-  "name": "apple-news-preview-generator",
+  "name": "anpg",
   "version": "1.0.0",
-  "description": "Create News Preview compatible folders from an Apple News compatible JSON endpoint",
+  "description": "Apple News Preview Generator - Create News Preview compatible folders from an Apple News compatible JSON endpoint",
   "main": "index.js",
   "bin": {
     "anpg": "./bin/app.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublish": "npm run build-cli",
     "watch-cli": "./node_modules/babel/bin/babel.js --watch ./src -d ./lib",
     "build-cli": "./node_modules/babel/bin/babel.js ./src -d ./lib",
     "start": "npm run build-cli && npm link"
