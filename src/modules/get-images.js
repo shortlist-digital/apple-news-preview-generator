@@ -27,8 +27,6 @@ let findImagesInObject = (directoryLocation, object) => {
       }
     }
   })
-  console.log('------------')
-  console.log(object)
   fs.outputJSON(directoryLocation + 'article.json', object, () => {
     console.log('Downloaded and updated')
   })
