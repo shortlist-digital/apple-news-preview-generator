@@ -1,10 +1,12 @@
-import fs from 'fs'
+import fs from 'fs-extra'
 import fetch from 'isomorphic-fetch'
 import slug from 'slug'
 
+let initialDir = process.cwd()
+
 let writeArticle = (articleObject) => {
   let folderName = slug(articleObject.title.toLowerCase())
-  console.log('New project will be written to: ', folderName)
+  console.log('New project will be written to: ', initialDir + folderName)
 }
 
 let filterResponse = (response) => {
