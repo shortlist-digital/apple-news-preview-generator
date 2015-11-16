@@ -33,7 +33,9 @@
     "babel": "^5.8.34",
     "commander": "^2.9.0",
     "es6-promise": "^3.0.2",
+    "fs-extra": "^0.26.2",
     "isomorphic-fetch": "^2.2.0",
+    "slug": "^0.9.1",
     "tree-walk": "^0.3.0"
   }
 }

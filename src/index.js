@@ -1,4 +1,15 @@
-let test = 'right?'
-let message = `This is cool ${test}`
+import program from 'commander'
+import packageObject from '../package.json'
+import builder from './modules/builder'
 
-console.log(message)
+
+program
+  .version(packageObject.version)
+  .command('get [endpoint]')
+  .action((endpoint, options) => {
+    console.log('Action fired')
+    console.log('Endpoint URL: ', endpoint)
+    builder(endpoint)
+  })
+
+program.parse(process.argv)
