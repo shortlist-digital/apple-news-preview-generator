@@ -2,6 +2,10 @@
 
 Create News Preview compatible folders from an Apple News compatible JSON endpoint
 
+## Installation
+
+`npm i -g anpg`
+
 ## Command Line
 
 WIP: Command line tool
