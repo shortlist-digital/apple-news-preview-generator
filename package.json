@@ -1,0 +1,26 @@
+{
+  "name": "apple-news-preview-generator",
+  "version": "1.0.0",
+  "description": "Create News Preview compatible folders from an Apple News compatible JSON endpoint",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shortlist-digital/apple-news-preview-generator.git"
+  },
+  "keywords": [
+    "apple",
+    "news",
+    "cli",
+    "preview",
+    "json"
+  ],
+  "author": "Jon Sherrard <jon.sherrard@shortlist.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shortlist-digital/apple-news-preview-generator/issues"
+  },
+  "homepage": "https://github.com/shortlist-digital/apple-news-preview-generator#readme"
+}
