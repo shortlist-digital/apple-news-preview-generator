@@ -8,6 +8,10 @@ let getImage = (directoryLocation, filename, url) => {
   download.on('end', (output) => {
     console.log('Done: ', output)
   })
+
+  download.on('error', (error) => {
+    throw new Error(error)
+  })
 }
 
 let findImagesInObject = (directoryLocation, object) => {
