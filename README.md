@@ -6,4 +6,4 @@ Create News Preview compatible folders from an Apple News compatible JSON endpoi
 
 WIP: Command line tool
 
-`apng apple-news.com/patible/json-endpoint`
+`anpg apple-news.com/patible/json-endpoint`
