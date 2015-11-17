@@ -1,5 +1,9 @@
+require('es6-promise').polyfill()
+require('isomorphic-fetch')
+
+import request from 'request'
+
 import fs from 'fs-extra'
-import fetch from 'isomorphic-fetch'
 import slug from 'slug'
 import getImages from './get-images'
 import osenv from 'osenv'
@@ -21,12 +25,15 @@ let writeArticle = (articleObject) => {
   })
 }
 
-let filterResponse = (response) => {
+let filterResponse = (err, response, body) => {
   console.log('Filtering response...')
-  if (response.status >= 400) {
+  if (err) {
+    console.log(err)
     throw new Error ('Bad response from the server')
   }
-  return response.json()
+  console.log('-------------')
+  let article = JSON.parse(body)
+  return writeArticle(article)
 }
 
 const builder = (url = 'none' ) => {
@@ -34,9 +41,7 @@ const builder = (url = 'none' ) => {
     return console.log('Builder was not supplied a URL')
   }
   console.log(`Initiating fetch to ${url}`)
-  return fetch(url)
-    .then(filterResponse)
-    .then(writeArticle)
+  request(url, filterResponse)
 }
 
 export default builder
