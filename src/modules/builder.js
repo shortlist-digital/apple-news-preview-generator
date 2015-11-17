@@ -1,8 +1,4 @@
-require('es6-promise').polyfill()
-require('isomorphic-fetch')
-
 import request from 'request'
-
 import fs from 'fs-extra'
 import slug from 'slug'
 import getImages from './get-images'

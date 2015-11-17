@@ -1,6 +1,6 @@
 {
   "name": "anpg",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Apple News Preview Generator - Create News Preview compatible folders from an Apple News compatible JSON endpoint",
   "main": "index.js",
   "bin": {
